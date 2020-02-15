@@ -5,9 +5,10 @@
     "scripts": {
       "postcss": "postcss css/*.css -d css -c postcss.config.js -m",
       "scss": "sass scss:css --source-map",
+      "build:css": "yarn scss && yarn postcss",
       "debug": "npx autoprefixer --info",
       "lint": "stylelint scss/*.scss",
-      "watch:css": "onchange 'scss/**/*.scss' -o 'stylelint {{changed}} --fix && yarn scss'",
+      "watch:css": "onchange 'scss/**/*.scss' -o 'stylelint {{changed}} --fix && yarn build:css'",
       "start": "yarn watch:css"
     },
     "repository": {
@@ -24,17 +25,18 @@
     },
     "homepage": "https://github.com/fictivekin/fk-sass#readme",
     "browserslist": [
-      "last 2 versions",
+      "last 2 major versions and > .2% in US",
+      "> 1% in US",
       "not dead",
-      "> .2%"
+      "not ie 11"
     ],
     "devDependencies": {
-      "autoprefixer": "^9.3.1",
-      "onchange": "^4.1.0",
-      "postcss-cli": "^6.0.1",
-      "sass": "^1.14.3",
-      "stylelint": "^9.2.0",
-      "stylelint-order": "^1.0.0",
-      "stylelint-scss": "^3.1.3"
+      "autoprefixer": "^9.7.4",
+      "onchange": "^6.1.0",
+      "postcss-cli": "^7.1.0",
+      "sass": "^1.25.0",
+      "stylelint": "^13.2.0",
+      "stylelint-order": "^4.0.0",
+      "stylelint-scss": "^3.14.2"
     }
   }
