@@ -1,0 +1,40 @@
+{
+    "name": "fk-sass",
+    "version": "0.0.1",
+    "description": "A starter sass framework.",
+    "scripts": {
+      "postcss": "postcss css/*.css -d css -c postcss.config.js -m",
+      "scss": "sass scss:css --source-map",
+      "debug": "npx autoprefixer --info",
+      "lint": "stylelint scss/*.scss",
+      "watch:css": "onchange 'scss/**/*.scss' -o 'stylelint {{changed}} --fix && yarn scss'",
+      "start": "yarn watch:css"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/fictivekin/fk-sass.git"
+    },
+    "author": {
+      "name": "Fictive Kin",
+      "email": "hello@fictivekin.com",
+      "url": "https://fictivekin.com/"
+    },
+    "bugs": {
+      "url": "https://github.com/fictivekin/fk-sass/issues"
+    },
+    "homepage": "https://github.com/fictivekin/fk-sass#readme",
+    "browserslist": [
+      "last 2 versions",
+      "not dead",
+      "> .2%"
+    ],
+    "devDependencies": {
+      "autoprefixer": "^9.3.1",
+      "onchange": "^4.1.0",
+      "postcss-cli": "^6.0.1",
+      "sass": "^1.14.3",
+      "stylelint": "^9.2.0",
+      "stylelint-order": "^1.0.0",
+      "stylelint-scss": "^3.1.3"
+    }
+  }
