@@ -1,0 +1,13 @@
+$vartest: 1px;
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+.yuck {
+    display: none;
+}

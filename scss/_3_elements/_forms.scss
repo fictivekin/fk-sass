@@ -1,0 +1,9 @@
+@use '../settings/global' as *;
+
+$formy: 1px;
+$vartest: 45px !default;
+
+form {
+    display: block;
+    font-size: $vartest;
+}
