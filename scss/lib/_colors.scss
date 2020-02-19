@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use '../config/colors' as *;
+
+$colors: (
+    'aqua': #7FDBFF,
+    'blue': #0074D9,
+    'navy': #001F3F,
+    'teal': #39CCCC,
+    'green': #2ECC40,
+    'olive': #3D9970,
+    'lime': #01FF70,
+    'yellow': #FFDC00,
+    'orange': #FF8E1B,
+    'red': #FF4136,
+    'fuchsia': #F012BE,
+    'purple': #B10DC9,
+    'maroon': #85144B,
+    'white': #FFF,
+    'silver': #DDD,
+    'gray': (
+        'base': #AAA,
+        'light': #CCC,
+        'dark': #888
+    ),
+    'black': #111
+) !default;
+
+
+
+
+// Colors
+// ---------------------------------------------------------
+//
+// Shortcut function to grab the map $colors.
+//
+// ```
+// @use '../config';
+//
+// .test {
+//     background: config.color('gray', 'dark');
+//     color: config.color('white');
+// }
+// ```
+//
+// $color - top level color value from the map, eg. 'blue'
+// $tone - 'base' by default, choose a tone from a submap if available, eg. 'light' or 'dark'
+// $color-map - $colors by default, but you can specify a different map to pull from if needed
+//
+// ---------------------------------------------------------
+
+@function color($color, $tone: 'base', $color-map: $colors) {
+    @if type-of(map.get($color-map, $color)) == 'map' {
+        @return map.get(map.get($color-map, $color), $tone);
+    } @else {
+        @return map.get($color-map, $color);
+    }
+}

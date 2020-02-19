@@ -5,9 +5,12 @@
 // modules and components.
 //
 // ```
-// @use '../config' // at the top of a module file that needs it
+// @use '../config'; // at the top of a module file that needs it
 // ```
 //
 // ---------------------------------------------------------
 
+@forward 'base-font';
 @forward 'colors';
+@forward '../lib/colors';
+@forward 'dimensions';

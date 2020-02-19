@@ -1,11 +1,15 @@
-// :root {
-//     --font-size-l: 1.25rem;
+@use '../../lib/units' as *;
+@use '../../lib/lock' as *;
+@use '../../lib/media-queries' as *;
 
-//     @media (min-width: 33.1875em) {
-//         --font-size-l: calc(1.25rem + 1.25 * ((100vw - 26.55rem) / 37.45));
+// :root {
+//     --font-size-l: rem(12);
+
+//     @media #{query('s')} {
+//         --font-size-l: #{lock(rem(12), rem(20), breakpoint('s'), breakpoint('l'))};
 //     }
 
-//     @media (min-width: 80em) {
-//         --font-size-l: 2.5rem;
+//     @media #{query('l')} {
+//         --font-size-l: rem(20);
 //     }
 // }

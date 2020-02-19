@@ -23,34 +23,3 @@ $colors: (
     ),
     'black': #111
 );
-
-
-
-
-// Colors
-// ---------------------------------------------------------
-//
-// Shortcut function to grab the map $colors.
-//
-// ```
-// @use '../config';
-//
-// .test {
-//     background: config.color('gray', 'dark');
-//     color: config.color('white');
-// }
-// ```
-//
-// $color - top level color value from the map, eg. 'blue'
-// $tone - 'base' by default, choose a tone from a submap if available, eg. 'light' or 'dark'
-// $color-map - $colors by default, but you can specify a different map to pull from if needed
-//
-// ---------------------------------------------------------
-
-@function color($color, $tone: 'base', $color-map: $colors) {
-    @if type-of(map-get($color-map, $color)) == 'map' {
-        @return map-get(map-get($color-map, $color), $tone);
-    } @else {
-        @return map-get($color-map, $color);
-    }
-}

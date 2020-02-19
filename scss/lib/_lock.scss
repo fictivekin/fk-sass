@@ -1,0 +1,40 @@
+@use 'units' as *;
+
+// Locks
+// ---------------------------------------------------------
+//
+// Function for building CSS Locks as described at
+// https://blog.typekit.com/2016/08/17/flexible-typography-with-css-locks/
+//
+// Built upon the logic found in a ps file
+// element has a solid background
+// background is covered by a gradient of one color
+// one can define the opacity of the two color stops + the gradient angle
+//
+// ```
+// @use '../lib/lock' as *;
+//
+// @include gradient.linear($purple-base, $mint-base);
+//
+// @include gradient.linear($purple-base, $mint-base, 0.8, 0.6, 180);
+// ```
+//
+// min-size + (max-size - min-size) * ( (100vw - min-breakpoint) / ( max-breakpoint - min-breakpoint) )
+// eg. — font-size: calc(12px + 9 * ( (100vw - 420px) / 260));
+// the values should be in px for this to work correctly
+//
+// $min-size - the smallest size the font should appear
+// $max-size - the largest size the font should appear (must match unit of $min-font-size)
+// $min-breakpoint - browser width for the smallest size
+// $max-breakpoint - browser width for the largest size (must match unit of $min-breakpoint)
+//
+// ---------------------------------------------------------
+
+@function lock($min-size: 16px, $max-size: 20px, $min-breakpoint: 480px, $max-breakpoint: 960px) {
+    $min-size: convert(px, $min-size);
+    $max-size: convert(px, $max-size);
+    $min-breakpoint: convert(px, $min-breakpoint, $root: true);
+    $max-breakpoint: convert(px, $max-breakpoint, $root: true);
+
+    @return calc(#{$min-size} + #{strip-units($max-size - $min-size)} * ((100vw - #{$min-breakpoint}) / #{strip-units($max-breakpoint - $min-breakpoint)}));
+}

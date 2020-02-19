@@ -1,0 +1,91 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'units' as *;
+@use '../config/dimensions' as *;
+
+$breakpoints: (
+    'xl': em(1280, 16),
+    'l': em(960, 16),
+    'm': em(769, 16),
+    's': em(481, 16)
+) !default;
+
+
+
+
+// Breakpoints
+// ---------------------------------------------------------
+//
+// Shortcut function to grab the map $breakpoints.
+//
+// ```
+// @use '../config';
+//
+// @media (min-width: #{config.breakpoint('s')}) {
+//     .test { display: none; }
+// }
+//
+// @media (max-width: #{config.breakpoint('m', 'wide')}) {
+//     .test { display: none; }
+// }
+// ```
+//
+// $breakpoint - top level breakpoint value from the map, eg. 's'
+// $size - 'base' by default, choose a tone from a submap if available, eg. 'mid'
+// $bp-map - $breakpoints by default, but you can specify a different map to pull from if needed
+//
+// ---------------------------------------------------------
+
+@function breakpoint($breakpoint, $size: 'base', $bp-map: $breakpoints) {
+    @if type-of(map.get($bp-map, $breakpoint)) == 'map' {
+        @return map.get(map.get($bp-map, $breakpoint), $size);
+    } @else {
+        @return map.get($bp-map, $breakpoint);
+    }
+}
+
+
+
+
+// Query
+// ---------------------------------------------------------
+//
+// Shortcut function to build media queries.
+//
+// ```
+// @media #{query('l')} {
+// ```
+//
+// ```
+// @media #{query('s', 'max')} {
+// ```
+//
+// When going 'max', we reduce the value by 1 pixel so
+// min and max media queries don't collide. Use the `$incluside-max`
+// parameter to override this behavior.
+//
+// $breakpoint - top level breakpoint value from the map, eg. 's'
+// $comparison - 'min' by default, but can be set to 'max'
+// $dimension - 'width' by default, but can be set to 'height'
+// $size - 'base' by default, choose a tone from a submap if available, eg. 'mid'
+// $bp-map - $breakpoints by default, but you can specify a different map to pull from if needed
+// $inclusive-max - false by default, but can be set to true
+//
+// ---------------------------------------------------------
+
+@function query($breakpoint, $comparison: 'min', $dimension: 'width', $size: 'base', $bp-map: $breakpoints, $inclusive-max: false) {
+    @if map.has-key($bp-map, $breakpoint) {
+        $breakpoint: breakpoint($breakpoint, $size, $bp-map);
+    }
+
+    // if going max, let's reduce the variable by 1 pixel so we don't have an overlap or gap in our media queries
+    @if $comparison == 'max' and not $inclusive-max {
+        @if math.unit($breakpoint) == 'px' {
+            $breakpoint: $breakpoint - 1px;
+        } @else {
+            $breakpoint: $breakpoint - em(1, 16);
+        }
+    }
+
+    @return '(#{$comparison}-#{$dimension}: #{$breakpoint})';
+}

@@ -1,0 +1,21 @@
+@use '../lib/units' as *;
+
+// Dimensions
+// ---------------------------------------------------------
+//
+// Dimensions variables are used for several baseline
+// settings, such as max-width, breakpoints, etc.
+//
+// ---------------------------------------------------------
+
+$base-font-size: 18;
+$base-line-height: 27 / $base-font-size;
+
+$maxwidth: rem(1440);
+
+$breakpoints: (
+    'xl': em(1280, 16),
+    'l': em(960, 16),
+    'm': em(769, 16),
+    's': em(481, 16)
+);
