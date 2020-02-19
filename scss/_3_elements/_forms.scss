@@ -1,9 +1,0 @@
-@use '../config';
-
-$formy: 1px;
-config.$vartest: 45px !default;
-
-form {
-    display: block;
-    font-size: config.$vartest;
-}

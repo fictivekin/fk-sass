@@ -25,15 +25,18 @@
 //
 //
 // ---------------------------------------------------------
-//
+
 
 // base
 // ---------------------------------------------------------
 //
 // Set the stage for your site with variables, fonts,
 // mixins, and a reset.
+//
+// ---------------------------------------------------------
 
 @use '_1_base/reset';
+@use '_1_base/properties';
 
 
 
@@ -44,6 +47,8 @@
 // A large portion of CSS is structural layout. You will use
 // these helpers to create the scaffolding that will support
 // the elements that make up your site.
+//
+// ---------------------------------------------------------
 
 
 
@@ -54,10 +59,10 @@
 // Global styling of elements. Elements are generally
 // grouped together and used with other elements inside
 // modules.
+//
+// ---------------------------------------------------------
 
-@use '_3_elements/buttons';
-@use '_3_elements/forms';
-
+@use '_3_elements/forms'
 
 
 
@@ -66,13 +71,8 @@
 //
 // Small, reusable objects that are usually combinations
 // of elements.
-.test {
-    display: none;
-    font-size: buttons.$test;
-    line-height: forms.$formy;
-    position: sticky;
-}
-
+//
+// ---------------------------------------------------------
 
 
 
@@ -81,3 +81,5 @@
 //
 // Larger, groups of modules that make more sense to group
 // together.
+//
+// ---------------------------------------------------------
