@@ -1,15 +1,19 @@
+@use '../../config/base-font' as *;
 @use '../../lib/units' as *;
 @use '../../lib/lock' as *;
 @use '../../lib/media-queries' as *;
 
 // :root {
-//     --font-size-l: rem(12);
+//     --font-size-l: #{rem(12)};
 
 //     @media #{query('s')} {
 //         --font-size-l: #{lock(rem(12), rem(20), breakpoint('s'), breakpoint('l'))};
 //     }
 
 //     @media #{query('l')} {
-//         --font-size-l: rem(20);
+//         --font-size-l: #{rem(20)};
 //     }
 // }
+html {
+    font-size: em($base-font-size, 16);
+}
