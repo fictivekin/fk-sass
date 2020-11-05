@@ -1,0 +1,31 @@
+//
+//   @images
+// ---------------------------------------------------------
+//
+//  Base styling for images, plus some helpful utility
+//  classes that modify images.
+//
+//  Note: You won't add any styling to these image classes,
+//        these are just utility classes
+//
+//  1. Fluid images set in _1_base/_reset.scss
+//  2. Offset `alt` text from surrounding copy.
+//  3. Setting `vertical-align` removes the whitespace that
+//     appears under `img` elements when they are dropped
+//     into a page as-is. Safer alternative to using
+//     `display: block;`.
+//
+// ---------------------------------------------------------
+//
+//  Base Image Style is 100% width by default
+//
+//  Example: Image
+//  <img src="http://fillmurray.com/600/300" alt="alt text">
+//
+// ---------------------------------------------------------
+img {
+    font-style: italic; // [2]
+    // max-width: 100%; // [1]
+    vertical-align: middle; // [3]
+    width: 100%;
+}

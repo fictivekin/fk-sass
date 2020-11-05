@@ -3,6 +3,11 @@
   --text-color: #111;
   --border-color: #AAA;
   --highlight-color: #0074D9;
+  --placeholder-txt: #B2B2B2;
+}
+
+:root {
+  --font-size-m: 0.8888888889rem;
 }
 
 html {
@@ -11,6 +16,7 @@ html {
 
 :root {
   --maxwidth: 80rem;
+  --gutter: 0.5555555556rem;
   --h-spacing: 1.1111111111rem;
 }
 @media (min-width: 30.0625em) {
@@ -87,6 +93,85 @@ html {
     white-space: nowrap;
     width: 1px;
   }
+}
+
+img {
+  font-style: italic;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.img--natural {
+  width: auto;
+}
+
+.img--title {
+  height: 1em;
+  width: auto;
+  vertical-align: top;
+}
+
+button,
+[role=button],
+.btn {
+  background-color: var(--text-color);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--font-size-l);
+  outline: 0;
+  padding: 1em 3em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
+}
+
+button.is-active,
+[role=button].is-active,
+.btn.is-active {
+  background-color: var(--text-color);
+  border-color: transparent;
+  color: var(--body-color);
+  opacity: 0.75;
+}
+
+button:hover,
+[role=button]:hover,
+.btn:hover,
+button:focus,
+[role=button]:focus,
+.btn:focus {
+  background-color: var(--body-color);
+  border-color: var(--text-color);
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+button.m--large,
+[role=button].m--large,
+.btn.m--large {
+  font-size: var(--font-size-l);
+}
+
+button.m--inline,
+[role=button].m--inline,
+.btn.m--inline {
+  font-size: 1em;
+  padding: 0.25em 0.75em;
+}
+
+button.m--block,
+[role=button].m--block,
+.btn.m--block {
+  display: block;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  text-align: center;
+  width: 100%;
 }
 
 .stack > * + * {

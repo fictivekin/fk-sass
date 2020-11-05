@@ -1,0 +1,67 @@
+@use 'lib/spacing';
+@use '_3_elements/text/headings';
+@use '_3_elements/text/lists';
+@use '_3_elements/text/quotes';
+@use '_3_elements/text/tables';
+
+//
+//   @text
+// --------------------------------------------------------
+//
+//  Some basic styles to paragraphs and inline styles.
+//
+// --------------------------------------------------------
+
+
+//   @inline
+// --------------------------------------------------------
+//
+//  Common inline elements
+//
+//  Example: inline elements
+//  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+//
+// --------------------------------------------------------
+b,
+strong {
+    font-weight: bold;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+
+
+
+//   @text
+// --------------------------------------------------------
+//
+//  Scoping text element styles so we aren't fighting
+//  specificity.
+//
+//  See http://guerillalabs.co/blog/styling-text-elements.html
+//
+// --------------------------------------------------------
+.text {
+    font-size: var(--font-size-m);
+
+    @include spacing.margin-container;
+
+    @include headings.headings;
+
+    @include lists.lists;
+
+    @include quotes.quotes;
+
+    @include tables.tables;
+}
+
+.text > :first-child {
+    margin-top: 0 !important;
+}
+
+.text .multimedia {
+    margin: 3em 0;
+}

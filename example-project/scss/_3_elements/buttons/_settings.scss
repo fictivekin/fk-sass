@@ -1,0 +1,21 @@
+@use 'config/borders' as *;
+
+$button-color: var(--text-color);
+$button-text-color: var(--body-color);
+
+$button-font-size: var(--font-size-l);
+$button-padding-v: 1em;
+$button-padding-h: 3em;
+
+$button-border: $border-width $border-style transparent;
+$button-border-radius: $border-radius;
+
+$button-active-color: var(--text-color);
+$button-active-text-color: var(--body-color);
+$button-active-border-color: transparent;
+$button-active-opacity: 0.75;
+
+$button-hover-color: var(--body-color);
+$button-hover-text-color: var(--text-color);
+$button-hover-border-color: var(--text-color);
+$button-hover-opacity: 0.85;

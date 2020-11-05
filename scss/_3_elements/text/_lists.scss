@@ -1,0 +1,74 @@
+//
+//    @lists
+// --------------------------------------------------------
+//
+//  Structure for lists
+//
+//  Example: Unordered List
+//  <ul>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>
+//      <ul>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//      </ul>
+//    </li>
+//  </ul>
+//
+//  Example: Ordered List
+//  <ol>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>List item here</li>
+//    <li>
+//      <ol>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//        <li>Nested Item</li>
+//      </ul>
+//    </li>
+//  </ol>
+//
+// ----------------------------------------------------------
+
+@mixin lists {
+    ul,
+    ol {
+        counter-reset: li;
+        margin: 0 0 1.5em 1.75em;
+    }
+
+    ul ul,
+    ul ol,
+    ol ul,
+    ol ol {
+        margin-bottom: 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    li::before {
+        padding-right: 0.5em;
+        position: absolute;
+        right: 100%;
+        text-align: right;
+    }
+
+    ul > li::before {
+        content: '\2022';
+    }
+
+    ol > li::before {
+        content: counter(li) '.';
+        counter-increment: li;
+    }
+}

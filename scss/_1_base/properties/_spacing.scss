@@ -6,6 +6,8 @@
 :root {
     --maxwidth: #{$maxwidth};
 
+    --gutter: #{rem(10)};
+
     --h-spacing: #{rem(20)};
 
     @media #{query('s')} {

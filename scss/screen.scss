@@ -67,6 +67,13 @@
 //
 // ---------------------------------------------------------
 
+@use '_3_elements/text'; // this file also imports several of the elements - to be scoped under .text
+@use '_3_elements/hr';
+@use '_3_elements/links';
+@use '_3_elements/images';
+@use '_3_elements/forms';
+@use '_3_elements/buttons';
+
 
 
 

@@ -1,0 +1,33 @@
+//
+//   @img--natural
+// --------------------------------------------------------
+//
+//  Natural Images are 100% max-width, but their natural width by default
+//
+//  Example: Image, Natural Width
+//  <img class="img--natural" src="http://fillmurray.com/600/300">
+//
+// --------------------------------------------------------
+
+.img--natural {
+    width: auto;
+}
+
+//
+//   @img--title
+// --------------------------------------------------------
+//
+//  Title images fit within a heading/title element
+//
+//  Example: Image inside a title (.img--title)
+//  <h1><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h1>
+//  <h2><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h2>
+//  <h3><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h3>
+//
+// --------------------------------------------------------
+
+.img--title {
+    height: 1em;
+    width: auto;
+    vertical-align: top;
+}

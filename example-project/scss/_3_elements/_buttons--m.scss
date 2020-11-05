@@ -1,0 +1,57 @@
+// --------------------------------------------------------
+//
+//  A btn modifier, large
+//
+//  Example: .btn--large
+//  <a class="btn btn--large">Large button</a>
+//
+// --------------------------------------------------------
+
+button.m--large,
+[role='button'].m--large,
+.btn.m--large {
+    font-size: var(--font-size-l);
+}
+
+// --------------------------------------------------------
+//
+//  A button modifier, if this button is in a paragraph or
+//  in anything else that has a defined font-size, this
+//  modifier will make the btn inherit the font-size of
+//  the partent.
+//
+//  Example: .m--inline
+//  <p>Here's some text <a role="button" class="m--inline">Cool button</a> text keeps going</p>
+//
+// --------------------------------------------------------
+
+button.m--inline,
+[role='button'].m--inline,
+.btn.m--inline {
+    font-size: 1em;
+    padding: 0.25em 0.75em;
+}
+
+// --------------------------------------------------------
+//
+//  A btn modifier - makes the button display block, 100%
+//  width and aligns the text to the center.  Removes left
+//  and right padding since the text is center aligned, it
+//  is not needed.  Actually sometimes having the padding
+//  on the left and right causes problems if the centered
+//  text is quite long - so we just remove it.
+//
+//  Example: .m--block
+//  <a href="#" role="button" class="m--block">Block button</a>
+//
+// --------------------------------------------------------
+
+button.m--block,
+[role='button'].m--block,
+.btn.m--block {
+    display: block;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    text-align: center;
+    width: 100%;
+}

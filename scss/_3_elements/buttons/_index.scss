@@ -1,0 +1,57 @@
+@use '_3_elements/buttons/settings' as *;
+@use 'config';
+
+// Buttons
+// --------------------------------------------------------
+//
+// Your standard button provides an easily identified clickable
+// target.
+//
+// Note: do not use `role="button"` on link elements that are
+// behaving as links. Doing that tells a screen reader that
+// the element is a button but the space bar does not work
+// to trigger the link. This can be fixed with JS, but there
+// is no reason when we should probably avoid the use in the
+// first place.
+//
+// --------------------------------------------------------
+
+button,
+[role='button'],
+.btn {
+    background-color: $button-color;
+    border: $button-border;
+    border-radius: $button-border-radius;
+    color: $button-text-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $button-font-size;
+    outline: 0;
+    padding: $button-padding-v $button-padding-h;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all config.$speed config.$ease;
+    vertical-align: middle;
+}
+
+button.is-active,
+[role='button'].is-active,
+.btn.is-active {
+    background-color: $button-active-color;
+    border-color: $button-active-border-color;
+    color: $button-active-text-color;
+    opacity: $button-active-opacity;
+}
+
+button:hover,
+[role='button']:hover,
+.btn:hover,
+button:focus,
+[role='button']:focus,
+.btn:focus {
+    background-color: $button-hover-color;
+    border-color: $button-hover-border-color;
+    color: $button-hover-text-color;
+    opacity: $button-hover-opacity;
+}

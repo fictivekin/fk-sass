@@ -1,0 +1,20 @@
+//
+//   @hr
+// --------------------------------------------------------
+//
+//  Horizontal Rule
+//
+//  Example:
+//  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+//  <hr>
+//  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+//
+// --------------------------------------------------------
+hr {
+    border: 0;
+    border-top: 1px solid #CCC;
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+}
