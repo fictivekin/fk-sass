@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use 'config/zindex' as *;
+
+$zindex: (
+    'modal': 900,
+    'overlay': 800,
+    'dropdown': 700,
+    'header': (
+        'base': 600,
+        'mid': 650,
+        'high': 690
+    ),
+    'footer': 500
+) !default;
+
+
+
+
+// --------------------------------------------------------
+//
+//  Shortcut function to grab the map $zindex.
+//
+// --------------------------------------------------------
+
+@function zindex($z, $sublayer: 'base', $z-map: $zindex) {
+    @if type-of(map.get($z-map, $z)) == 'map' {
+        @return map.get(map.get($z-map, $z), $sublayer);
+    } @else {
+        @return map.get($z-map, $z);
+    }
+}

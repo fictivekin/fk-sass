@@ -1,5 +1,4 @@
-@use 'sass:map';
-@use 'config/colors' as *;
+// defaults from https://github.com/mrmrs/colors
 
 $colors: (
     'aqua': #7FDBFF,
@@ -13,7 +12,7 @@ $colors: (
     'orange': #FF8E1B,
     'red': #FF4136,
     'fuchsia': #F012BE,
-    'purple': #B10DC9,
+    'purple': #F00,
     'maroon': #85144B,
     'white': #FFF,
     'silver': #DDD,
@@ -23,15 +22,4 @@ $colors: (
         'dark': #888
     ),
     'black': #111
-) !default;
-
-
-
-
-@function color($color, $tone: 'base', $color-map: $colors) {
-    @if type-of(map.get($color-map, $color)) == 'map' {
-        @return map.get(map.get($color-map, $color), $tone);
-    } @else {
-        @return map.get($color-map, $color);
-    }
-}
+);

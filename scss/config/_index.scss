@@ -10,7 +10,11 @@
 //
 // ---------------------------------------------------------
 
-@forward 'base-font';
-@forward 'colors';
-@forward '../lib/colors';
-@forward 'dimensions';
+@forward 'lib/assets';
+@forward 'config/base-font';
+@forward 'config/borders';
+@forward 'lib/colors';
+@forward 'config/dimensions';
+@forward 'config/fonts';
+@forward 'config/transitions';
+@forward 'lib/zindex';

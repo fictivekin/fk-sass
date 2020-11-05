@@ -1,0 +1,9 @@
+// hardware acceleration
+@mixin is-accelerated {
+    transform: translate3d(0, 0, 0);
+
+    // backface-visibility: hidden;
+    // perspective: 1000;
+}
+
+// if your animation is still flickering after applying the style above, try the commented out properties below to fix the problem

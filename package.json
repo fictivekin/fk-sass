@@ -5,9 +5,9 @@
     "license": "MIT",
     "scripts": {
       "postcss": "postcss css/*.css -r -u autoprefixer -m",
-      "postcss:example": "postcss example/css/*.css -r -u autoprefixer -m",
+      "postcss:example": "postcss example-project/css/*.css -r -u autoprefixer -m",
       "scss": "sass scss:css --source-map --load-path=scss",
-      "scss:example": "sass example/scss:example/css --source-map --load-path=example/scss --load-path=scss",
+      "scss:example": "sass example-project/scss:example-project/css --source-map --load-path=example-project/scss --load-path=scss",
       "build": "yarn scss && yarn postcss",
       "build:example": "yarn scss:example && yarn postcss:example",
       "debug": "npx autoprefixer --info",

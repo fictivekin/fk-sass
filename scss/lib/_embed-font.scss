@@ -1,0 +1,46 @@
+@use 'assets' as *;
+
+// Embed Font
+//
+// Use this mixin to embed a font.
+//
+// ```
+// @include embed-font("interstate-light", "interstate_light-webfont");
+// ```
+//
+// ```
+// @include embed-font('BLOKKRegular', 'BLOKKRegular/webfonts/BLOKKRegular');
+// ```
+//
+// $font-name - used in your css in font-family declarations
+// $font-filename - the location of your font file and the filename WITHOUT the file extension
+// $font-weight - optional - set the weight for this font
+// $font-style - optional - set the style for this font
+//
+// Style guide: mixins.font-embed
+
+@mixin embed-font(
+    $font-name,
+    $font-filename,
+    $font-weight: null,
+    $font-style: null
+) {
+    @font-face {
+        font-display: swap;
+        font-family: $font-name;
+        src: font-url($font-filename + '.eot'); // IE9 Compat Modes
+        src: font-url($font-filename + '.eot?#iefix')
+                format('embedded-opentype'),
+            /* IE6-IE8*/ font-url($font-filename + '.woff2') format('woff2'),
+            /* Modern Browsers*/ font-url($font-filename + '.woff')
+                format('woff'),
+            /* Modern Browsers*/ font-url($font-filename + '.ttf')
+                format('truetype'); // Legacy Safari, Android, iOS
+        @if $font-weight {
+            font-weight: $font-weight;
+        }
+        @if $font-style {
+            font-style: $font-style;
+        }
+    }
+}

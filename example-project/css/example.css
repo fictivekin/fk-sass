@@ -1,0 +1,22 @@
+:root {
+  --body-color: #FFF;
+  --text-color: #111;
+  --border-color: #AAA;
+  --highlight-color: #0074D9;
+}
+
+html {
+  font-size: 1em;
+}
+
+.stack > * + * {
+  margin-top: 40px;
+}
+
+.test {
+  background-image: url(/static/img/dog.jpg);
+  color: #F00;
+  font-size: 1em;
+}
+
+/*# sourceMappingURL=example.css.map */

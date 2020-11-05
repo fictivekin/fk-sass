@@ -1,0 +1,8 @@
+// Transitions
+//
+// To make transitions more consistent, a couple of variables are available; `$speed` and `$ease`. These can be used as `transition: all $speed $ease;`
+//
+// Style guide: sass.transitions
+
+$speed: 0.3s;
+$ease: ease-in-out;

@@ -1,0 +1,32 @@
+// URLs
+//
+// Variables are used to set the directories used by the the
+// `http-url`, `font-url`, and `image-url` functions found in
+// `lib/_assets.scss`
+//
+// Change the base directories to whatever is needed in this
+// project.
+//
+// Usage generally replaces the default CSS url call, so
+// `background-image: image-url('dog.jpg');`
+//
+// Style guide: sass.URLs
+
+// examples
+// --------------------------------------------------------
+//
+// .test {
+//      background-image: url('#{http-url('cat/dog.jpg')}');
+// }
+//
+// src: font-url($font-filename+'.eot');
+//
+// .test {
+//      background-image: image-url('dog.jpg');
+// }
+//
+// --------------------------------------------------------
+
+$static-dir: 'static'; // can also be ../ or /
+$font-dir: 'fonts';
+$images-dir: 'img';

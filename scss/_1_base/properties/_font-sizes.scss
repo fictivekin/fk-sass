@@ -1,7 +1,7 @@
-@use '../../config/base-font' as *;
-@use '../../lib/units' as *;
-@use '../../lib/lock' as *;
-@use '../../lib/media-queries' as *;
+@use 'config/base-font' as *;
+@use 'lib/units' as *;
+@use 'lib/lock' as *;
+@use 'lib/media-queries' as *;
 
 // :root {
 //     --font-size-l: #{rem(12)};

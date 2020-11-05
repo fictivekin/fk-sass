@@ -1,0 +1,27 @@
+@use 'lib/embed-font';
+
+// examples of proper loading of 3rd party fonts:
+//
+// @include embed-font('Sans', 'SansWeb-Regular', normal, normal);
+// @include embed-font('Sans', 'SansWeb-RegularItalic', normal, italic);
+// @include embed-font('Sans', 'SansWeb-Bold', bold, normal);
+//
+// then define the font in config/_fonts.scss:
+//
+// $sans: 'Sans', $system;
+//
+// and calling those fonts properly:
+//
+// @mixin sans {
+//     font-family: $sans;
+// }
+
+// @mixin sans-italic {
+//     font-family: $sans;
+//     font-style: italic;
+// }
+
+// @mixin sans-bold {
+//     font-family: $sans;
+//     font-weight: bold;
+// }

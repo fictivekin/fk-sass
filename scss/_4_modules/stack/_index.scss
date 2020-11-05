@@ -1,0 +1,5 @@
+@use '_4_modules/stack/settings' as *;
+
+.stack > * + * {
+    margin-top: $stack-spacing;
+}

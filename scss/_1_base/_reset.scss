@@ -67,10 +67,13 @@ dd {
 // Set core body defaults
 //
 // --------------------------------------------------------
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.5;
   min-height: 100vh;
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 }
 
@@ -83,8 +86,8 @@ body {
 // attribute
 //
 // --------------------------------------------------------
-ul,
-ol {
+ul[class],
+ol[class] {
   list-style: none;
 }
 

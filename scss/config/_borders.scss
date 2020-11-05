@@ -1,0 +1,12 @@
+// Borders
+//
+// Borders are available from variables. Usage in Sass looks like
+// `border: $border-width $border-style $border-color;` or `border: $border;`
+// or `border-radius: $border-radius;`
+
+// see _1_base/properties/_colors for border colors
+
+$border-style: solid;
+$border-width: 1px;
+$border-radius: 3px;
+$border: $border-width $border-style var(--border-color);

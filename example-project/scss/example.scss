@@ -29,16 +29,25 @@
 // base
 // ---------------------------------------------------------
 //
-// Set the stage for your site with fonts, custom properties,
-// base styles, and a reset.
+// Set the stage for your site with variables, fonts,
+// mixins, and a reset.
 //
 // ---------------------------------------------------------
 
-@use '_1_base/reset';
 @use '_1_base/properties';
-@use '_1_base/fonts-embedded';
-@use '_1_base/animations';
-@use '_1_base/site-document';
+
+@use 'config';
+@use 'lib/assets';
+@use 'lib/units' as *;
+
+// @use '_4_modules/test';
+@use '_4_modules/stack';
+
+.test {
+    background-image: assets.image-url('dog.jpg');
+    color: config.color('purple');
+    font-size: em(config.$base-font-size, 16);
+}
 
 
 
@@ -75,16 +84,12 @@
 //
 // ---------------------------------------------------------
 
-@use '_4_modules/example';
-@use '_4_modules/stack';
-
-
 
 
 // pages
 // ---------------------------------------------------------
 //
-// Larger groups of modules that make more sense to group
+// Larger, groups of modules that make more sense to group
 // together.
 //
 // ---------------------------------------------------------

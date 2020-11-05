@@ -1,0 +1,29 @@
+@use 'lib/colors' as *;
+
+// Color Roles
+:root {
+    --body-color: #{color('white')};
+    --text-color: #{color('black')};
+
+    --border-color: #{color('gray')};
+
+    --highlight-color: #{color('blue')}; // used for text selections, etc.
+
+    // --placeholder-txt: #B2B2B2;
+    //
+    // --error-bg: #FFE6E6;
+    // --error-txt: #E04646;
+    // --error-border: #E04646;
+    //
+    // --warning-bg: #FCF7D8;
+    // --warning-txt: #B29804;
+    // --warning-border: #B29804;
+    //
+    // --info-bg: #E8F3FF;
+    // --info-txt: #537DF6;
+    // --info-border: #537DF6;
+    //
+    // --success-bg: #DAFCE1;
+    // --success-txt: #0CA129;
+    // --success-border: #0CA129;
+}

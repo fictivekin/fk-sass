@@ -1,0 +1,45 @@
+@use 'config/base-font' as *;
+@use 'config/fonts' as *;
+
+//
+//   @site-document
+// --------------------------------------------------------
+//
+//  Main HTML structure & styles
+//  Main body structure & styles
+//
+// --------------------------------------------------------
+
+//   @HTML
+// --------------------------------------------------------
+//
+//  HTML should contain the site's default background color
+//  and font-size
+//
+// --------------------------------------------------------
+html {
+    background: var(--body-color);
+    min-height: 100%;
+}
+
+//   @body
+// --------------------------------------------------------
+//
+//  Body should contain the document's default font and
+//  background color for the content, if that background
+//  color is different than the html.
+//
+// --------------------------------------------------------
+body {
+    @include sans;
+
+    background: var(--body-color);
+    color: var(--text-color);
+    // font-size: set in _1_base/properties/_font-sizes.scss
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: $base-line-height;
+    margin: 0;
+    min-height: 100%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}

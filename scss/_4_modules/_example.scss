@@ -1,0 +1,10 @@
+@use 'config';
+@use 'lib/assets';
+
+.example {
+    @include config.sans;
+
+    background-image: assets.image-url('dog.jpg');
+    border: config.$border;
+    color: config.color('purple');
+}

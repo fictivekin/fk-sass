@@ -1,0 +1,91 @@
+@use 'sass:meta';
+@use 'config/assets' as *;
+
+@use 'buildstamp';
+
+// Assets
+//
+// Functions for paths for different kinds of assets used
+// on the site.
+//
+// Style guide: mixins.assets
+
+// HTTP URL
+//
+// Determines the path of a static asset based
+// on the existence of `$BUILDSTAMP`.
+//
+// If a `$BUILDSTAMP` isn't in use, `$static-dir`
+// is used as the base directory. It defaults to 'assets'
+// but can be changed in `_1_base/_vars.scss`.
+//
+// ```
+// .sample-usage {
+//      background-image: url(#{http-url('images/background.jpg')});
+// }
+// ```
+//
+// It is recommended to use `font-url` or `image-url` instead
+// of using `http-url` on its own.
+//
+// $asset-type - path from `$static-dir` of the asset to reference
+@function http-url($asset-type) {
+    $static-dir: 'assets' !default;
+
+    @if (meta.global-variable-exists(BUILDSTAMP)) {
+        @return '/#{$BUILDSTAMP}/#{$asset-type}';
+    } @else if $static-dir == '../' or $static-dir == '/' {
+        @return '#{$static-dir}#{$asset-type}';
+    } @else {
+        @return '/#{$static-dir}/#{$asset-type}';
+    }
+}
+
+
+// Font URL
+//
+// Returns an absolute path to a font asset, wrapped
+// in a CSS `url()` declaration.
+//
+// Paths default to starting at 'fonts' (within the `$static-dir`),
+// but can be changed in `_1_base/_vars.scss`.
+//
+// ```
+// @font-face {
+//      font-family: 'BLOKKRegular';
+//      src: font-url('BLOKKRegular/webfonts/BLOKKRegular.woff2');
+// }
+// ```
+//
+// $filename - path from `$font-dir` of the image to reference
+//
+// Style guide: mixins.assets.font-url
+@function font-url($filename) {
+    $font-dir: 'fonts' !default;
+
+    @return unquote('url(#{http-url($font-dir)}/#{$filename})');
+}
+
+
+// Image URL
+//
+// Returns an absolute path to an image asset, wrapped
+// in a CSS `url()` declaration.
+//
+// Paths default to starting at 'images' (within the `$static-dir`),
+// but can be changed in `_1_base/_vars.scss`.
+//
+// ```
+// .sample-usage {
+//      background-image: image-url('background.jpg');
+// }
+// ```
+//
+// $filename - path from `$images-dir` of the image to reference
+//
+// Style guide: mixins.assets.image-url
+@function image-url($filename) {
+    $images-dir: 'img' !default;
+
+    @return unquote('url(#{http-url($images-dir)}/#{$filename})');
+}
