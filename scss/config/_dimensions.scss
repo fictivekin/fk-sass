@@ -11,6 +11,7 @@
 $maxwidth: rem(1440);
 
 $breakpoints: (
+    'xxl': em(1440, 16),
     'xl': em(1280, 16),
     'l': em(960, 16),
     'm': em(769, 16),

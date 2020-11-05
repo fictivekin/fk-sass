@@ -36,7 +36,7 @@
 
 @use '_1_base/reset';
 @use '_1_base/properties';
-@use '_1_base/fonts-embedded';
+@use '_1_base/fonts';
 @use '_1_base/animations';
 @use '_1_base/site-document';
 
@@ -51,6 +51,9 @@
 // the elements that make up your site.
 //
 // ---------------------------------------------------------
+
+@use '_2_layout/container';
+@use '_2_layout/hide';
 
 
 

@@ -36,19 +36,6 @@
 
 @use '_1_base/properties';
 
-@use 'config';
-@use 'lib/assets';
-@use 'lib/units' as *;
-
-// @use '_4_modules/test';
-@use '_4_modules/stack';
-
-.test {
-    background-image: assets.image-url('dog.jpg');
-    color: config.color('purple');
-    font-size: em(config.$base-font-size, 16);
-}
-
 
 
 
@@ -61,6 +48,10 @@
 //
 // ---------------------------------------------------------
 
+@use '_2_layout/container';
+@use '_2_layout/container--m';
+@use '_2_layout/hide';
+@use '_2_layout/hide--m';
 
 
 
@@ -84,6 +75,8 @@
 //
 // ---------------------------------------------------------
 
+// @use '_4_modules/test';
+@use '_4_modules/stack';
 
 
 // pages
@@ -93,3 +86,13 @@
 // together.
 //
 // ---------------------------------------------------------
+
+@use 'config';
+@use 'lib/assets';
+@use 'lib/units' as *;
+
+.test {
+    background-image: assets.image-url('dog.jpg');
+    color: config.color('purple');
+    font-size: em(config.$base-font-size, 16);
+}

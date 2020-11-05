@@ -1,0 +1,14 @@
+//
+//   @margin-container
+// --------------------------------------------------------
+//
+//  Useful in a list or repeating block where the final child
+//  element should not have a bottom margin.
+//
+// --------------------------------------------------------
+
+@mixin margin-container {
+    > :last-child {
+        margin-bottom: 0 !important;
+    }
+}

@@ -1,0 +1,20 @@
+@use 'lib/hide' as *;
+
+//
+//   @hide
+// ---------------------------------------------------------
+//
+//  Utility state classes to hide things in different ways
+//
+// ---------------------------------------------------------
+[hidden] {
+    display: none !important;
+}
+
+.is-hidden {
+    @include is-hidden;
+}
+
+.is-visually-hidden {
+    @include is-visually-hidden;
+}

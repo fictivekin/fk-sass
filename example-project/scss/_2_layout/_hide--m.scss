@@ -1,0 +1,9 @@
+@use 'lib/hide' as *;
+
+.is-hidden-large {
+    @include is-hidden('l', 'min');
+}
+
+.is-visually-hidden-small {
+    @include is-visually-hidden('s', 'max');
+}

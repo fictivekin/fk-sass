@@ -1,0 +1,81 @@
+@use 'lib/units' as *;
+@use 'lib/media-queries' as *;
+
+// is-hidden
+//
+// The classic, `display: none`
+//
+// Also includes breakpoint specific hidden classes.
+//
+// These breakpoints are defined in _1_base/_vars.scss,
+// and use max-width by default.
+//
+// ```
+// .feature {
+//     @include is-hidden;
+// }
+//
+// .feature {
+//     @include is-hidden('s', 'min');
+// }
+// ```
+//
+// $breakpoint - references a value in the $breakpoints map. Sets hidden for only certain widths
+// $comparison - 'max' by default, but may be changed to 'min'
+// $dimension - 'width' by default, but may be changed to 'height'
+// $size - sub-value within the $breakpoints map
+//
+// Style guide: mixins.hide
+
+@mixin is-hidden($breakpoint: false, $comparison: 'max', $dimension: 'width', $size: 'base') {
+    @if $breakpoint {
+        @media #{query($breakpoint, $comparison, $dimension, $size)} {
+            @include is-hidden;
+        }
+    } @else {
+        display: none;
+    }
+}
+
+
+
+
+// is-visually-hidden
+//
+// Use this if you still need accessible and JS access
+// to this element. It's visually hidden but still in the DOM.
+//
+// ```
+// .feature {
+//     @include is-visually-hidden;
+// }
+//
+// .feature {
+//     @include is-visually-hidden('s', 'min');
+// }
+// ```
+//
+// $breakpoint - references a value in the $breakpoints map. Sets hidden for only certain widths
+// $comparison - 'max' by default, but may be changed to 'min'
+// $dimension - 'width' by default, but may be changed to 'height'
+// $size - sub-value within the $breakpoints map
+//
+// Style guide: mixins.hide.visually
+
+@mixin is-visually-hidden($breakpoint: false, $comparison: 'max', $dimension: 'width', $size: 'base') {
+    @if $breakpoint {
+        @media #{query($breakpoint, $comparison, $dimension, $size)} {
+            @include is-visually-hidden;
+        }
+    } @else {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}

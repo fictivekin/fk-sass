@@ -9,6 +9,86 @@ html {
   font-size: 1em;
 }
 
+:root {
+  --maxwidth: 80rem;
+  --h-spacing: 1.1111111111rem;
+}
+@media (min-width: 30.0625em) {
+  :root {
+    --h-spacing: 1.7777777778rem;
+  }
+}
+@media (min-width: 48.0625em) {
+  :root {
+    --h-spacing: 2.4444444444rem;
+  }
+}
+@media (min-width: 60em) {
+  :root {
+    --h-spacing: 3.1111111111rem;
+  }
+}
+@media (min-width: 80em) {
+  :root {
+    --h-spacing: 3.8888888889rem;
+  }
+}
+
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: var(--maxwidth);
+  padding: 0 var(--h-spacing);
+}
+
+.container--wide {
+  max-width: var(--maxwidth-wide);
+}
+
+.container--narrow {
+  max-width: var(--maxwidth-narrow);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (min-width: 60em) {
+  .is-hidden-large {
+    display: none;
+  }
+}
+
+@media (max-width: 30em) {
+  .is-visually-hidden-small {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
 .stack > * + * {
   margin-top: 40px;
 }

@@ -1,0 +1,23 @@
+//
+//   @container
+// --------------------------------------------------------
+//
+//
+//  Restricts content to the site's max width
+//  but allows for full color bars for sections.
+//
+//  Example: Container
+//
+//  <section class="awesome-section-with-background-color">
+//    <div class="container">
+//      <!--your content here-->
+//    </div>
+//  </section>
+//
+// --------------------------------------------------------
+.container {
+    box-sizing: content-box;
+    margin: 0 auto;
+    max-width: var(--maxwidth); // restricts width
+    padding: 0 var(--h-spacing); // adds padding on viewports less than the max-width
+}
