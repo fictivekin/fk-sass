@@ -28,7 +28,7 @@ Copy the `example-project` directory from this repo into your project where sass
 Add this new directory and the `node_modules` fk-sass directory to your sass compile script. Here is an example compile script:
 
 ```
-sass scss:css --source-map --load-path=scss --load-path=node_modules/@fictive/fk-sass/scss
+sass scss:css --source-map --load-path=scss --load-path=node_modules/@fictivekin/fk-sass/scss
 ```
 
 With this setup, the project sass files are setup to either overwrite the fk-sass files, fall-back to the fk-sass files, or be a supplement to the fk-sass files.
