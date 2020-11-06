@@ -87,12 +87,18 @@
 //
 // ---------------------------------------------------------
 
+@use '_4_modules/site-header';
+@use '_4_modules/site-main';
+@use '_4_modules/site-footer';
+// @use '_4_modules/page-header';
 @use '_4_modules/section';
 @use '_4_modules/section/modifiers';
 @use '_4_modules/modal';
 @use '_4_modules/multimedia';
 @use '_4_modules/multimedia--m';
 @use '_4_modules/stack';
+
+
 
 
 // pages
@@ -103,61 +109,4 @@
 //
 // ---------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-// elements
-// ---------------------------------------------------------
-//
-// Global styling of elements. Elements are generally
-// grouped together and used with other elements inside
-// modules.
-//
-// ---------------------------------------------------------
-
-@use '_3_elements/text'; // this file also imports several of the elements - to be scoped under .text
-@use '_3_elements/hr';
-@use '_3_elements/links';
-@use '_3_elements/images';
-@use '_3_elements/forms';
-@use '_3_elements/buttons';
-
-
-
-
-// modules
-// ---------------------------------------------------------
-//
-// Small, reusable objects that are usually combinations
-// of elements.
-//
-// ---------------------------------------------------------
-
-@use '_4_modules/site-header';
-@use '_4_modules/site-main';
-@use '_4_modules/site-footer';
-@use '_4_modules/page-header';
-@use '_4_modules/section';
-@use '_4_modules/modal';
-@use '_4_modules/multimedia';
-@use '_4_modules/stack';
-
-
-
-
-// pages
-// ---------------------------------------------------------
-//
-// Larger groups of modules that make more sense to group
-// together.
-//
-// ---------------------------------------------------------
-
+@use '_5_pages/home';
