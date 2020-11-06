@@ -1,50 +1,50 @@
 {
-    "name": "fk-sass",
-    "version": "0.0.1",
-    "description": "A starter sass framework.",
-    "license": "MIT",
-    "scripts": {
-      "postcss": "postcss css/*.css -r -u autoprefixer -m",
-      "postcss:example": "postcss example-project/css/*.css -r -u autoprefixer -m",
-      "scss": "sass scss:css --source-map --load-path=scss",
-      "scss:example": "sass example-project/scss:example-project/css --source-map --load-path=example-project/scss --load-path=scss",
-      "build": "yarn scss && yarn postcss",
-      "build:example": "yarn scss:example && yarn postcss:example",
-      "debug": "npx autoprefixer --info",
-      "lint": "stylelint scss/*.scss",
-      "watch": "chokidar 'scss/**/*.scss' -c 'stylelint {path} --fix && yarn build'",
-      "watch:example": "onchange 'example/scss/**/*.scss' -k -o 'stylelint {{changed}} --fix && yarn build:example' --",
-      "start": "yarn watch",
-      "start:example": "yarn watch:example"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git://github.com/fictivekin/fk-sass.git"
-    },
-    "author": {
-      "name": "Fictive Kin",
-      "email": "hello@fictivekin.com",
-      "url": "https://fictivekin.com/"
-    },
-    "bugs": {
-      "url": "https://github.com/fictivekin/fk-sass/issues"
-    },
-    "homepage": "https://github.com/fictivekin/fk-sass#readme",
-    "browserslist": [
-      "extends @fictivekin/browserslist-config-fk"
-    ],
-    "stylelint": {
-      "extends": "@fictivekin/stylelint-config-fk"
-    },
-    "devDependencies": {
-      "@fictivekin/browserslist-config-fk": "^1.0.0",
-      "@fictivekin/stylelint-config-fk": "^1.1.0",
-      "autoprefixer": "^9.7.4",
-      "chokidar-cli": "^2.1.0",
-      "postcss-cli": "^7.1.0",
-      "sass": "^1.25.0",
-      "stylelint": "^13.5.0",
-      "stylelint-order": "^4.0.0",
-      "stylelint-scss": "^3.14.2"
-    }
-  }
+  "name": "@fictivekin/fk-sass",
+  "version": "1.0.1",
+  "description": "Fictive Kin starter sass framework",
+  "license": "MIT",
+  "scripts": {
+    "postcss": "postcss css/*.css -r -u autoprefixer -m",
+    "postcss:example": "postcss example-project/css/*.css -r -u autoprefixer -m",
+    "scss": "sass scss:css --source-map --load-path=scss",
+    "scss:example": "sass example-project/scss:example-project/css --source-map --load-path=example-project/scss --load-path=scss",
+    "build": "yarn scss && yarn postcss",
+    "build:example": "yarn scss:example && yarn postcss:example",
+    "debug": "npx autoprefixer --info",
+    "lint": "stylelint scss/*.scss",
+    "watch": "chokidar 'scss/**/*.scss' -c 'stylelint {path} --fix && yarn build'",
+    "watch:example": "onchange 'example/scss/**/*.scss' -k -o 'stylelint {{changed}} --fix && yarn build:example' --",
+    "start": "yarn watch",
+    "start:example": "yarn watch:example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fictivekin/fk-sass.git"
+  },
+  "author": "Fictive Kin <hello@fictivekin.com> (https://fictivekin.com/)",
+  "bugs": {
+    "url": "https://github.com/fictivekin/fk-sass/issues"
+  },
+  "homepage": "https://github.com/fictivekin/fk-sass#readme",
+  "browserslist": [
+    "extends @fictivekin/browserslist-config-fk"
+  ],
+  "stylelint": {
+    "extends": "@fictivekin/stylelint-config-fk"
+  },
+  "devDependencies": {
+    "@fictivekin/browserslist-config-fk": "^1.0.0",
+    "@fictivekin/stylelint-config-fk": "^1.1.0",
+    "autoprefixer": "^9.7.4",
+    "chokidar-cli": "^2.1.0",
+    "postcss-cli": "^7.1.0",
+    "sass": "^1.25.0",
+    "stylelint": "^13.5.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.14.2"
+  },
+  "main": "scss/screen.scss",
+  "keywords": [
+    "sass"
+  ]
+}
