@@ -1,0 +1,10 @@
+// slide-out
+@keyframes slide-out {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10%);
+    }
+}

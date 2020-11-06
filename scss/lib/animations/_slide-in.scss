@@ -1,0 +1,10 @@
+// slide-in
+@keyframes slide-in {
+    from {
+        transform: translateY(15%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

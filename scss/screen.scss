@@ -37,7 +37,6 @@
 @use '_1_base/reset';
 @use '_1_base/properties';
 @use '_1_base/fonts';
-@use '_1_base/animations';
 @use '_1_base/site-document';
 
 
@@ -85,7 +84,13 @@
 //
 // ---------------------------------------------------------
 
-@use '_4_modules/example';
+@use '_4_modules/site-header';
+@use '_4_modules/site-main';
+@use '_4_modules/site-footer';
+@use '_4_modules/page-header';
+@use '_4_modules/section';
+@use '_4_modules/modal';
+@use '_4_modules/multimedia';
 @use '_4_modules/stack';
 
 

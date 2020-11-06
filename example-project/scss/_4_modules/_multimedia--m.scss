@@ -1,0 +1,5 @@
+// ratio rules
+// widescreen already accounted for in default rule
+.multimedia--standard::before {
+    padding-bottom: 75%;
+}

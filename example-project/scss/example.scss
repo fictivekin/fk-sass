@@ -34,7 +34,10 @@
 //
 // ---------------------------------------------------------
 
+@use '_1_base/reset';
 @use '_1_base/properties';
+@use '_1_base/fonts';
+@use '_1_base/site-document';
 
 
 
@@ -64,8 +67,12 @@
 //
 // ---------------------------------------------------------
 
+@use '_3_elements/text'; // this file also imports several of the elements - to be scoped under .text
+// @use '_3_elements/hr';
+@use '_3_elements/links';
 @use '_3_elements/images';
 @use '_3_elements/images--m';
+// @use '_3_elements/forms';
 @use '_3_elements/buttons';
 @use '_3_elements/buttons--m';
 
@@ -80,7 +87,11 @@
 //
 // ---------------------------------------------------------
 
-// @use '_4_modules/test';
+@use '_4_modules/section';
+@use '_4_modules/section/modifiers';
+@use '_4_modules/modal';
+@use '_4_modules/multimedia';
+@use '_4_modules/multimedia--m';
 @use '_4_modules/stack';
 
 
@@ -92,12 +103,61 @@
 //
 // ---------------------------------------------------------
 
-@use 'config';
-@use 'lib/assets';
-@use 'lib/units' as *;
 
-.test {
-    background-image: assets.image-url('dog.jpg');
-    color: config.color('purple');
-    font-size: em(config.$base-font-size, 16);
-}
+
+
+
+
+
+
+
+
+
+
+// elements
+// ---------------------------------------------------------
+//
+// Global styling of elements. Elements are generally
+// grouped together and used with other elements inside
+// modules.
+//
+// ---------------------------------------------------------
+
+@use '_3_elements/text'; // this file also imports several of the elements - to be scoped under .text
+@use '_3_elements/hr';
+@use '_3_elements/links';
+@use '_3_elements/images';
+@use '_3_elements/forms';
+@use '_3_elements/buttons';
+
+
+
+
+// modules
+// ---------------------------------------------------------
+//
+// Small, reusable objects that are usually combinations
+// of elements.
+//
+// ---------------------------------------------------------
+
+@use '_4_modules/site-header';
+@use '_4_modules/site-main';
+@use '_4_modules/site-footer';
+@use '_4_modules/page-header';
+@use '_4_modules/section';
+@use '_4_modules/modal';
+@use '_4_modules/multimedia';
+@use '_4_modules/stack';
+
+
+
+
+// pages
+// ---------------------------------------------------------
+//
+// Larger groups of modules that make more sense to group
+// together.
+//
+// ---------------------------------------------------------
+

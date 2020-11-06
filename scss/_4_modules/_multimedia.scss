@@ -1,0 +1,36 @@
+@use 'lib/cover';
+
+//
+//   @multimedia
+// ---------------------------------------------------------
+//
+//  For video and object responsive sizing.
+//
+// ---------------------------------------------------------
+.multimedia {
+    position: relative;
+    width: 100%;
+}
+
+.multimedia::before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.multimedia embed,
+.multimedia object,
+.multimedia video,
+.multimedia iframe {
+    @include cover.cover;
+
+    margin: 0 !important; // to overwrite margins that may be set in other stylesheets
+    padding: 0;
+}
+
+// ratio rules
+// widescreen already accounted for in default rule
+.multimedia--standard::before {
+    padding-bottom: 75%;
+}

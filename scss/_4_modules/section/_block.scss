@@ -1,0 +1,24 @@
+@use '_4_modules/section/settings' as *;
+
+//
+//   @sections
+// --------------------------------------------------------
+//
+//  Individual horizontal chunks of the page. These styles
+//  are good for shared heading, vertical spacing between
+//  modules, and background colors. Pairs really well with
+//  .containers (to control horizontal spacing).
+//
+// --------------------------------------------------------
+.section {
+    margin: $section-margin 0;
+    padding: $section-padding 0;
+}
+
+.section:first-child {
+    margin-top: 0;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}

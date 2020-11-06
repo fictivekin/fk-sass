@@ -1,0 +1,17 @@
+@use 'lib/colors' as *;
+
+
+
+
+.section--large {
+    padding: var(--h-spacing-l) 0;
+}
+
+.section--flush {
+    padding: 0;
+}
+
+.section--black {
+    background-color: color('black');
+    color: color('white');
+}
