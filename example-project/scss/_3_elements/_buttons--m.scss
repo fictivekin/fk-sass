@@ -7,9 +7,7 @@
 //
 // --------------------------------------------------------
 
-button.m--large,
-[role='button'].m--large,
-.btn.m--large {
+.btn--large {
     font-size: var(--font-size-l);
 }
 
@@ -25,9 +23,7 @@ button.m--large,
 //
 // --------------------------------------------------------
 
-button.m--inline,
-[role='button'].m--inline,
-.btn.m--inline {
+.btn--inline {
     font-size: 1em;
     padding: 0.25em 0.75em;
 }
@@ -46,9 +42,7 @@ button.m--inline,
 //
 // --------------------------------------------------------
 
-button.m--block,
-[role='button'].m--block,
-.btn.m--block {
+.btn--block {
     display: block;
     padding-left: var(--gutter);
     padding-right: var(--gutter);
