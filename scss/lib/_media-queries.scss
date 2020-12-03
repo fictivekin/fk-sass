@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:math';
 @use 'units' as *;
-@use '../config/dimensions' as *;
+@use 'config/dimensions' as *;
 
 $breakpoints: (
     'xl': em(1280, 16),

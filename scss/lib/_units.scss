@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'sass:math';
-@use '../config/base-font' as *;
+@use 'config/base-font' as *;
 
 $base-font-size: 16 !default;
 
