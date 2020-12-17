@@ -1,4 +1,5 @@
 @use '_4_modules/modal/settings' as *;
+@use 'lib/zindex' as *;
 @use 'lib/animations/fade-in';
 @use 'lib/animations/fade-out';
 @use 'lib/animations/slide-in';
@@ -47,6 +48,7 @@ $modal-title-weight: normal !default;
     position: fixed;
     right: 0;
     top: 0;
+    z-index: zindex('modal');
 }
 
 .modal__container {
