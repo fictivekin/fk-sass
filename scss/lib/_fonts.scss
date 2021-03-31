@@ -32,13 +32,18 @@
         font-family: $font-name;
         @if $font-format == 'legacy' or $font-format == 'legacy-no-woff2' {
             src: font-url($font-filename + '.eot'); // IE9 Compat Modes
-            src: font-url($font-filename + '.eot?#iefix')
-                    format('embedded-opentype'), // IE6-IE8
-                    @if $font-format != 'legacy-no-woff2' {
+            @if $font-format == 'legacy-no-woff2' {
+                src: font-url($font-filename + '.eot?#iefix')
+                        format('embedded-opentype'), // IE6-IE8
+                        font-url($font-filename + '.woff') format('woff'),
+                        font-url($font-filename + '.ttf') format('truetype'); // Legacy Safari and Mobile
+            } @else {
+                src: font-url($font-filename + '.eot?#iefix')
+                        format('embedded-opentype'), // IE6-IE8
                         font-url($font-filename + '.woff2') format('woff2'),
-                    }
-                    font-url($font-filename + '.woff') format('woff'),
-                    font-url($font-filename + '.ttf') format('truetype'); // Legacy Safari and Mobile
+                        font-url($font-filename + '.woff') format('woff'),
+                        font-url($font-filename + '.ttf') format('truetype'); // Legacy Safari and Mobile
+            }
         } @else if $font-format == 'woff2' {
             src: font-url($font-filename + '.woff2') format('woff2');
         } @else if $font-format == 'woff' {

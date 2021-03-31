@@ -1,0 +1,31 @@
+@use 'lib/zindex' as *;
+
+// skipnav
+// --------------------------------------------------------
+//
+// See https://codepen.io/jacobfentress/pen/WybzKm for
+// example scss and html code for a skipnav button.
+//
+// --------------------------------------------------------
+
+.skipnav {
+    font-size: 14px;
+    left: 1.2em;
+    opacity: 0;
+    padding: 0.5em 1.2em;
+    position: fixed;
+    text-decoration: none;
+    top: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out, opacity 0s linear 0.3s;
+    width: auto;
+    z-index: zindex('header', 'high');
+}
+
+.skipnav:hover,
+.skipnav:focus {
+    opacity: 1;
+    outline: none;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
