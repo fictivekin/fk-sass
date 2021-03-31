@@ -5,8 +5,12 @@
     --body-color: #{color('white')};
     --text-color: #{color('black')};
 
+    --link-color: #{color('blue')};
+    --link-color-hover: #{color('aqua')};
+
     --border-color: #{color('gray')};
 
+    --tap-highlight-color: rgba(0, 0, 0, 0.35);
     --highlight-color: #{color('blue')}; // used for text selections, etc.
 
     --placeholder-txt: #B2B2B2;
