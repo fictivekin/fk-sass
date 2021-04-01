@@ -1,0 +1,28 @@
+@use 'config/dimensions' as *;
+@use 'lib/units' as *;
+@use 'lib/lock' as *;
+@use 'lib/media-queries' as *;
+
+:root {
+    --maxwidth: #{$maxwidth};
+
+    --gutter: #{rem(10)};
+
+    --h-spacing: #{rem(20)};
+
+    @media #{query('s')} {
+        --h-spacing: #{rem(32)};
+    }
+
+    @media #{query('m')} {
+        --h-spacing: #{rem(44)};
+    }
+
+    @media #{query('l')} {
+        --h-spacing: #{rem(56)};
+    }
+
+    @media #{query('xl')} {
+        --h-spacing: #{rem(70)};
+    }
+}
