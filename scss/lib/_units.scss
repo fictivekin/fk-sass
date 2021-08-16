@@ -23,7 +23,7 @@ $base-font-size: 16 !default;
 // ---------------------------------------------------------
 
 @function strip-units($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, ($number * 0 + 1));
 }
 
 
@@ -64,7 +64,7 @@ $base-font-size: 16 !default;
     @if strip-units($target) == 0 {
         @return 0;
     } @else {
-        @return (strip-units($target) / strip-units($context)) * 1em;
+        @return (math.div(strip-units($target), strip-units($context))) * 1em;
     }
 }
 
@@ -75,7 +75,7 @@ $base-font-size: 16 !default;
     @if strip-units($target) == 0 {
         @return 0;
     } @else {
-        @return (strip-units($target) / strip-units($context)) * 1rem;
+        @return (math.div(strip-units($target), strip-units($context))) * 1rem;
     }
 }
 
@@ -86,14 +86,14 @@ $base-font-size: 16 !default;
     @if strip-units($target) == 0 {
         @return 0;
     }
-    @return (strip-units($target) / strip-units($context)) * 100%;
+    @return (math.div(strip-units($target), strip-units($context))) * 100%;
 }
 
 // convert one unit into another
 @function convert($target-unit, $val, $context: $base-font-size, $root: false) {
     $rootmultiplier: 1;
     @if $root {
-        $rootmultiplier: 16 / $context;
+        $rootmultiplier: math.div(16, $context);
     }
     @if $target-unit == 'px' {
         @if math.unit($val) == 'px' {

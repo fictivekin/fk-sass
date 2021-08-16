@@ -10,8 +10,8 @@
 // @use '../lib/lock' as *;
 // ```
 //
-// min-size + (max-size - min-size) * ( (100vw - min-breakpoint) / ( max-breakpoint - min-breakpoint) )
-// eg. — font-size: calc(12px + 9 * ( (100vw - 420px) / 260));
+// min-size + (max-size - min-size) * ( (100vw - min-breakpoint) / (max-breakpoint - min-breakpoint) )
+// eg. — font-size: calc(12px + 9 * ( (100vw - 420px) / 260) );
 // the values should be in px for this to work correctly
 //
 // $min-size - the smallest size the font should appear
