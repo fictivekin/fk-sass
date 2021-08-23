@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Base Font
 // ---------------------------------------------------------
 //
@@ -7,4 +9,4 @@
 // ---------------------------------------------------------
 
 $base-font-size: 18;
-$base-line-height: 27 / $base-font-size;
+$base-line-height: math.div(27, $base-font-size);
