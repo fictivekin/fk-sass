@@ -3,7 +3,7 @@
 @use 'config/fonts' as *;
 
 $modal-overlay-color: rgba(0, 0, 0, 0.6);
-$modal-background-color: var(--body-color);
+$modal-background-color: var(--color-body);
 
 $modal-border-radius: $border-radius;
 $modal-max-width: rem(500);

@@ -1,7 +1,7 @@
 @use 'config/borders' as *;
 
-$button-color: var(--text-color);
-$button-text-color: var(--body-color);
+$button-color: var(--color-text);
+$button-text-color: var(--color-body);
 
 $button-font-size: var(--font-size-l);
 $button-padding-v: 1em;
@@ -10,12 +10,12 @@ $button-padding-h: 3em;
 $button-border: $border-width $border-style transparent;
 $button-border-radius: $border-radius;
 
-$button-active-color: var(--text-color);
-$button-active-text-color: var(--body-color);
+$button-active-color: var(--color-text);
+$button-active-text-color: var(--color-body);
 $button-active-border-color: transparent;
 $button-active-opacity: 0.75;
 
-$button-hover-color: var(--body-color);
-$button-hover-text-color: var(--text-color);
-$button-hover-border-color: var(--text-color);
+$button-hover-color: var(--color-body);
+$button-hover-text-color: var(--color-text);
+$button-hover-border-color: var(--color-text);
 $button-hover-opacity: 0.85;

@@ -2,18 +2,18 @@
 
 // Color Roles
 :root {
-    --body-color: #{color('white')};
-    --text-color: #{color('black')};
+    --color-body: #{color('white')};
+    --color-text: #{color('black')};
 
-    --link-color: #{color('blue')};
-    --link-color-hover: #{color('aqua')};
+    --color-link: #{color('blue')};
+    --color-link-hover: #{color('aqua')};
 
-    --border-color: #{color('gray')};
+    --color-border: #{color('gray')};
 
-    --tap-highlight-color: rgba(0, 0, 0, 0.35);
-    --highlight-color: #{color('blue')}; // used for text selections, etc.
+    --color-tap-highlight: rgba(0, 0, 0, 0.35);
+    --color-highlight: #{color('blue')}; // used for text selections, etc.
 
-    --placeholder-txt: #B2B2B2;
+    --color-placeholder-txt: #B2B2B2;
 
     // --error-bg: #FFE6E6;
     // --error-txt: #E04646;

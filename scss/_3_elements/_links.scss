@@ -22,13 +22,13 @@
 //
 // --------------------------------------------------------
 a {
-    color: var(--link-color);
+    color: var(--color-link);
     transition: color $speed $ease;
 }
 
 a:hover,
 a:focus {
-    color: var(--link-color-hover);
+    color: var(--color-link-hover);
 }
 
 
@@ -42,5 +42,5 @@ a:focus {
 //
 // --------------------------------------------------------
 body {
-    -webkit-tap-highlight-color: var(--tap-highlight-color);
+    -webkit-tap-highlight-color: var(--color-tap-highlight);
 }
