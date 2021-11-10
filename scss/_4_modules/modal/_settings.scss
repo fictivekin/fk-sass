@@ -7,7 +7,7 @@ $modal-background-color: var(--color-body);
 
 $modal-border-radius: $border-radius;
 $modal-max-width: rem(500);
-$modal-padding: var(--spacing-gutter);
+$modal-padding: var(--space-gutter);
 
 $modal-title-color: color('blue');
 $modal-title-font-size: var(--font-size-l);
@@ -23,7 +23,7 @@ $modal-title-weight: bold;
 $modal-close-color: color('blue');
 
 $modal-content-color: color('black');
-$modal-content-margin: var(--spacing-gutter);
+$modal-content-margin: var(--space-gutter);
 
 @mixin modal-content {
     @include sans;

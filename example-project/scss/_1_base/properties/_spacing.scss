@@ -6,23 +6,23 @@
 :root {
     --maxwidth: #{$maxwidth};
 
-    --spacing-gutter: #{rem(10)};
+    --space-gutter: #{rem(10)};
 
-    --spacing-outer: #{rem(20)};
+    --space-outer: #{rem(20)};
 
     @media #{query('s')} {
-        --spacing-outer: #{rem(32)};
+        --space-outer: #{rem(32)};
     }
 
     @media #{query('m')} {
-        --spacing-outer: #{rem(44)};
+        --space-outer: #{rem(44)};
     }
 
     @media #{query('l')} {
-        --spacing-outer: #{rem(56)};
+        --space-outer: #{rem(56)};
     }
 
     @media #{query('xl')} {
-        --spacing-outer: #{rem(70)};
+        --space-outer: #{rem(70)};
     }
 }

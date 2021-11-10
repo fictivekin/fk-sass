@@ -114,27 +114,27 @@ html {
 
 :root {
   --maxwidth: 90rem;
-  --spacing-gutter: 0.625rem;
-  --spacing-outer: 1.25rem;
+  --space-gutter: 0.625rem;
+  --space-outer: 1.25rem;
 }
 @media (min-width: 30.0625em) {
   :root {
-    --spacing-outer: 2rem;
+    --space-outer: 2rem;
   }
 }
 @media (min-width: 48.0625em) {
   :root {
-    --spacing-outer: 2.75rem;
+    --space-outer: 2.75rem;
   }
 }
 @media (min-width: 60em) {
   :root {
-    --spacing-outer: 3.5rem;
+    --space-outer: 3.5rem;
   }
 }
 @media (min-width: 80em) {
   :root {
-    --spacing-outer: 4.375rem;
+    --space-outer: 4.375rem;
   }
 }
 
@@ -160,7 +160,7 @@ body {
   box-sizing: content-box;
   margin: 0 auto;
   max-width: var(--maxwidth);
-  padding: 0 var(--spacing-outer);
+  padding: 0 var(--space-outer);
 }
 
 .container--wide {
@@ -375,8 +375,8 @@ button:focus,
 
 .btn--block {
   display: block;
-  padding-left: var(--spacing-gutter);
-  padding-right: var(--spacing-gutter);
+  padding-left: var(--space-gutter);
+  padding-right: var(--space-gutter);
   text-align: center;
   width: 100%;
 }
@@ -405,7 +405,7 @@ button:focus,
 
 .section {
   margin: 0 0;
-  padding: var(--spacing-outer) 0;
+  padding: var(--space-outer) 0;
 }
 
 .section:first-child {
@@ -417,7 +417,7 @@ button:focus,
 }
 
 .section--large {
-  padding: var(--spacing-outer-l) 0;
+  padding: var(--space-outer-l) 0;
 }
 
 .section--flush {
@@ -480,7 +480,7 @@ button:focus,
   max-height: 100vh;
   max-width: 31.25rem;
   overflow-y: auto;
-  padding: var(--spacing-gutter);
+  padding: var(--space-gutter);
 }
 
 .modal__header {
@@ -515,7 +515,7 @@ button:focus,
   font-weight: normal;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.5;
-  margin: var(--spacing-m) 0;
+  margin: var(--space-m) 0;
 }
 
 .modal {

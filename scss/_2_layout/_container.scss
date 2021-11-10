@@ -19,5 +19,5 @@
     box-sizing: content-box;
     margin: 0 auto;
     max-width: var(--maxwidth); // restricts width
-    padding: 0 var(--spacing-outer); // adds padding on viewports less than the max-width
+    padding: 0 var(--space-outer); // adds padding on viewports less than the max-width
 }
