@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use 'sass:math';
 @use 'config/base-font' as *;
 
@@ -79,6 +78,15 @@ $base-font-size: 16 !default;
     }
 }
 
+// Make VW for a given target size at a specific browser width
+// echo as: font-size: vw(24px, 600px);
+@function vw($target, $context: 960) {
+    @if strip-units($target) == 0 {
+        @return 0;
+    }
+    @return math.div(strip-units(convert(px, $target)), math.div(strip-units(convert(px, $context)), 100)) * 1vw;
+}
+
 // Make px to % using 960px;
 // echo as: width: percent(240);
 // if the base is another value, say 16px, write percent(10, 16)
@@ -98,8 +106,10 @@ $base-font-size: 16 !default;
     @if $target-unit == 'px' {
         @if math.unit($val) == 'px' {
             @return $val;
-        } @else {
+        } @else if math.unit($val) == 'em' or math.unit($val) == 'rem' {
             @return px($val, $context * $rootmultiplier);
+        } @else {
+            @return strip-units($val) * 1px;
         }
     } @else if $target-unit == 'rem' {
         @if math.unit($val) == 'rem' {

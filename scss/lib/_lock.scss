@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'units' as *;
 
 // Locks
@@ -28,4 +29,31 @@
     $max-breakpoint: convert(px, $max-breakpoint, $root: true);
 
     @return calc(#{$min-size} + #{strip-units($max-size - $min-size)} * ((100vw - #{$min-breakpoint}) / #{strip-units($max-breakpoint - $min-breakpoint)}));
+}
+
+// ---------------------------------------------------------
+//
+// clamp-lock works just like lock, but uses css clamp instead
+// of calc. clamp-lock automatically converts units to rem for
+// the final output.
+//
+// see https://utopia.fyi/blog/clamp/ for the math approach here.
+//
+// ---------------------------------------------------------
+@function clamp-lock($min-size: 16px, $max-size: 20px, $min-breakpoint: 480px, $max-breakpoint: 960px, $reverse: false) {
+    $min-size: convert(px, $min-size);
+    $max-size: convert(px, $max-size);
+    $min-breakpoint: convert(px, $min-breakpoint, $root: true);
+    $max-breakpoint: convert(px, $max-breakpoint, $root: true);
+
+    $slope: math.div(($max-size - $min-size), ($max-breakpoint - $min-breakpoint));
+    @if $reverse {
+        $slope: math.div(($min-size - $max-size), ($max-breakpoint - $min-breakpoint));
+    }
+    $y-intersect: (-1 * $min-breakpoint) * $slope + $min-size;
+    @if $reverse {
+        $y-intersect: (-1 * $min-breakpoint) * $slope + $max-size;
+    }
+
+    @return clamp(#{rem($min-size)}, #{rem($y-intersect)} + #{$slope} * 100vw, #{rem($max-size)});
 }
